@@ -14,9 +14,13 @@ const EditTask = () => {
 
   useEffect(() => {
     const getTask = async () => {
-      const task = await axios.post("http://localhost:3001/edit", {
-        taskID: params.id,
-      });
+      // const task = await axios.post("http://localhost:3001/edit", {
+      const task = await axios.post(
+        "https://mern-to-do-omega.vercel.app/edit",
+        {
+          taskID: params.id,
+        }
+      );
       console.log(task);
       setTitle(task.data.title);
       setCompleted(task.data.completed);
@@ -26,7 +30,8 @@ const EditTask = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.put("http://localhost:3001/edit", {
+    // await axios.put("http://localhost:3001/edit", {
+    await axios.put("https://mern-to-do-omega.vercel.app/edit", {
       taskID: params.id,
       title,
       completed,
@@ -63,9 +68,7 @@ const EditTask = () => {
           Save changes
         </button>
       </form>
-      <Link href={"/"} className="">
-        👈 Get back
-      </Link>
+      <Link href={"/"}>👈 Get back</Link>
     </main>
   );
 };
