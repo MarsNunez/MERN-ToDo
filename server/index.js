@@ -11,17 +11,20 @@ app.use(express.json());
 app.use(taskRouter);
 
 app.get("/", async (req, res) => {
-  // const tasks = await TaskModel.find({});
-  // res.json(tasks);
-  res.json({ message: "hello dog" });
+  const tasks = await TaskModel.find({});
+  res.json(tasks);
+  // res.json({ message: "hello dog" });
 });
 
 mongoose
   .connect(
     "mongodb+srv://root:root@tasks.1xlf5da.mongodb.net/tasks?retryWrites=true&w=majority"
   )
-  .then(
+  .then(() => {
     app.listen(3001, () => {
       console.log("Listening on port 3001");
-    })
-  );
+    });
+  })
+  .catch((error) => {
+    console.error("Error connecting to MongoDB aqui:", error);
+  });
