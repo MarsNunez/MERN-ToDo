@@ -16,7 +16,7 @@ const EditTask = () => {
     const getTask = async () => {
       // const task = await axios.post("http://localhost:3001/edit", {
       const task = await axios.post(
-        "https://mern-to-do-omega.vercel.app/edit",
+        "https://www.mern-to-do-omega.vercel.app/edit",
         {
           taskID: params.id,
         }
@@ -31,7 +31,7 @@ const EditTask = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // await axios.put("http://localhost:3001/edit", {
-    await axios.put("https://mern-to-do-omega.vercel.app/edit", {
+    await axios.put("https://www.mern-to-do-omega.vercel.app/edit", {
       taskID: params.id,
       title,
       completed,
