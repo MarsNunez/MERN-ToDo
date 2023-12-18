@@ -11,8 +11,9 @@ app.use(express.json());
 app.use(taskRouter);
 
 app.get("/", async (req, res) => {
-  const tasks = await TaskModel.find({});
-  res.json(tasks);
+  // const tasks = await TaskModel.find({});
+  // res.json(tasks);
+  res.send("Hello");
 });
 
 mongoose
