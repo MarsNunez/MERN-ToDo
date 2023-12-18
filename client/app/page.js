@@ -10,7 +10,7 @@ export default function Home() {
   useEffect(() => {
     const getTasks = async () => {
       // const tasks = await axios("http://localhost:3001/");
-      const tasks = await axios("https://www.mern-to-do-omega.vercel.app/");
+      const tasks = await axios("https://mern-to-do-omega.vercel.app/");
       setTasks(tasks.data);
     };
     getTasks();
@@ -19,7 +19,7 @@ export default function Home() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // await axios.post("http://localhost:3001/create", {
-    await axios.post("https://www.mern-to-do-omega.vercel.app/create", {
+    await axios.post("https://mern-to-do-omega.vercel.app/create", {
       title,
       completed: false,
     });
@@ -38,7 +38,7 @@ export default function Home() {
                   onClick={async () => {
                     // await axios.put("http://localhost:3001/toggle", {
                     await axios.put(
-                      "https://www.mern-to-do-omega.vercel.app/toggle",
+                      "https://mern-to-do-omega.vercel.app/toggle",
                       {
                         taskID: task._id,
                       }
@@ -53,7 +53,7 @@ export default function Home() {
                   onClick={async () => {
                     // await axios.put("http://localhost:3001/toggle", {
                     await axios.put(
-                      "https://www.mern-to-do-omega.vercel.app/toggle",
+                      "https://mern-to-do-omega.vercel.app/toggle",
                       {
                         taskID: task._id,
                       }
@@ -79,7 +79,7 @@ export default function Home() {
                 onClick={async () => {
                   await axios.delete(
                     // "http://localhost:3001/delete/" + task._id
-                    "https://www.mern-to-do-omega.vercel.app/delete/" + task._id
+                    "https://mern-to-do-omega.vercel.app/delete/" + task._id
                   );
                 }}
                 className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
